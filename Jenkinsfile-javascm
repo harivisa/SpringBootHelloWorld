@@ -1,17 +1,17 @@
 pipeline {
     agent any 
     stages {
-        stage('Clone repo and clean') { 
+        stage('Clone git and clean') { 
             steps {
                 sh "mvn clean"
             }
         }
-        stage('Test') { 
+        stage('Build and Test') { 
             steps {
                 sh "mvn test"
             }
         }
-        stage('Deploy') { 
+        stage('Ready to deploy') { 
             steps {
                  sh "mvn install"
             }
